@@ -1,0 +1,158 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:title" content="">
+	<meta property="og:type" content="">
+	<meta property="og:url" content="">
+	<meta property="og:image" content="">
+
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="apple-touch-icon" href="icon.png">
+	<!-- Place favicon.ico in the root directory -->
+
+	<link rel="stylesheet" href="/css/normalize.css">
+	<link rel="stylesheet" href="/css/main.css">
+
+	<meta name="theme-color" content="#fafafa">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<style>
+			a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{
+		margin:0;
+		padding:0;
+		border:0;
+		font-size:100%;
+		font:inherit;
+		vertical-align:baseline
+}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{
+		display:block
+}
+body{
+		line-height:1
+}
+ol,ul{
+		list-style:none
+}
+blockquote,q{
+		quotes:none
+}
+blockquote:after,blockquote:before,q:after,q:before{
+		content:"";
+		content:none
+}
+table{
+		border-collapse:collapse;
+		border-spacing:0
+}
+body{
+		margin-right:10px;
+		margin-left:10px;
+		font-size:14px;
+		line-height:1.4
+}
+em{
+		font-style:italic
+}
+body,h1,h2,h3{
+		font-weight:300;
+		margin-bottom:1em
+}
+h1{
+		font-size:20px
+}
+h2{
+		font-size:16px;
+		margin-top:1em
+}
+</style>
+
+	<link rel="stylesheet" href="index.css">
+	<script src="https://cdn.jsdelivr.net/npm/react-player@2.9.0/dist/ReactPlayer.standalone.js"></script>
+</head>
+
+<body>
+
+
+<section class="section">
+	 <h1>ReactPlayer Demo</h1>
+	 <div id='stage'>
+		 
+
+		</div>
+</section>
+
+<script type="text/template" id='template_controls'>
+			 <table class="react-player-controls"style="display:none; position:absolute; top:50%; right:2em;">
+				<tbody>
+					 <tr>
+							<th>Controls</th>
+							<td colspan=3>
+								<button>Stop</button>
+								<button value="playpause">Play/Pause</button>
+								<button>Fullscreen</button>
+								<button>PiP</button>
+							</td>
+							<th>Speed</th>
+							<td colspan=3><button value="Speed 1">1x</button><button value="Speed 1.5">1.5x</button><button value="Speed 2">2x</button></td>
+					 </tr>
+					 <tr>
+							<th>Seek</th>
+							<td colspan=7><input name="seek" type="range" min="0" max="0.999999" step="any" value="0"></td>
+					 </tr>
+					 <tr>
+							<th>Volume</th>
+							<td colspan=7><input name="volume" type="range" min="0" max="1" step="any" value="0.8"></td>
+					 </tr>
+					 <tr>
+							<th><label for="controls">Controls</label></th>
+							<td><input name="controls" type="checkbox"><em>&nbsp; Requires player reload</em></td>
+							<th><label for="mute">Mute</label></th>
+							<td><input name="mute" type="checkbox"></td>
+							<th><label for="loop">Loop</label></th>
+							<td><input name="loop" type="checkbox"></td>
+							<th><label for="light">Light mode</label></th>
+							<td><input name="light" type="checkbox"></td>
+					 </tr>
+					 <tr>
+							<th>Played</th>
+							<td colspan=7><progress name='progress' max="1" value="0"></progress></td>
+					 </tr>
+					 <tr>
+							<th>Loaded</th>
+							<td colspan=7><progress name='loaded' max="1" value="0"></progress></td>
+					 </tr>
+				</tbody>
+		 </table>	
+</script>
+
+
+<script src="index.js"></script>
+
+	<script src="/js/vendor/modernizr-3.11.2.min.js"></script>
+	<script src="/js/plugins.js"></script>
+	<script src="/js/main.js"></script>
+
+	<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+	<script>
+		window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+		ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+	</script>
+	<script src="https://www.google-analytics.com/analytics.js" async></script>
+	<script type="text/javascript">
+		//INIT
+
+		let url = location.hash.substring(1)
+		createPlayer('stage',url,{controls:'template_controls'})
+
+	</script>
+</body>
+
+</html>
