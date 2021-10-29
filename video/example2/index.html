@@ -1,0 +1,29 @@
+<!-- PLAYER 1 -->
+<div class="MGvideo" id='container1'></div>
+<div class="slidecontainer">
+  <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+  <br>Value: <span id="demo"></span>
+</div>
+<div class='control'>
+<button onClick='javascript: myplayer1.play()'>Play</button>
+<button onClick='javascript: myplayer1.pause()'>Pause</button>
+<button onClick='javascript: myplayer1.seek(20, "seconds")'>seekTo(20)</button>
+<button onClick='javascript: myplayer1.mute()'>Mute</button>
+<button onClick='javascript: myplayer1.unmute()'>unMute</button>
+<button onClick='javascript: myplayer1.speed(2)'>playbackRate(2)</button>
+<button onClick='javascript: myplayer1.volume(.2)'>volume(.2)</button>
+<button onClick='javascript: alert(myplayer1.getDuration)'>button test</button>
+</div>
+<!-- PLAYER 2 -->
+<div class="MGvideo" id='container2'></div>
+<div class='control'>
+<button onClick='javascript: myplayer2.play()'>Play</button>
+<button onClick='javascript: myplayer2.pause()'>Pause</button>
+<button onClick='javascript: myplayer2.mute()'>Mute</button>
+<button onClick='javascript: myplayer2.unmute()'>unMute</button>
+<button onClick='javascript: myplayer2.speed(2)'>playbackRate</button>
+<button onClick='javascript: myplayer2.volume(.2)'>volume(.2)</button>
+<button onClick='javascript: myplayer2.seek(60,"seconds")'>button test</button>
+</div>
+
+
