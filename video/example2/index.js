@@ -33,9 +33,10 @@ web.video = function WebVideo(stage, url, options) {
 		'8:5':'62.5%',
 	}
 	
-	let padding="56.25%"
+	let padding=''
 	let aspect = options.aspectRatio;
 	if(options.aspectRatio){
+		padding = "56.25%"
 		let type = typeof options.aspectRatio
 		if(type=='string'){
 			if(aspect.split(':').length ==2){
