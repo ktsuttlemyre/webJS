@@ -47,9 +47,9 @@ web.video = function WebVideo(stage, url, options) {
 	}
 	
 
-	let container = document.createElement('div')
+	let container = document.createElement('div');
 	//container.className="player-wrapper"
-	container.style.position='relative';
+	aspect && container.style.position='relative';
 	container.style.paddingTop=padding /* Player ratio: 100 / (1280 / 720) */
 	container.style.width='100%';
 	container.style.height='100%';
