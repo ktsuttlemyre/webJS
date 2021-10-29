@@ -33,9 +33,10 @@ function createPlayer(stage,url,options){
 		'8:5':'62.5%',
 	}
 	
-	let padding="56.25%"
+	let padding=''
 	let aspect = options.aspectRatio;
 	if(options.aspectRatio){
+		padding = "56.25%"
 		let type = typeof options.aspectRatio
 		if(type=='string'){
 			if(aspect.split(':').length ==2){
@@ -49,7 +50,7 @@ function createPlayer(stage,url,options){
 
 	let container = document.createElement('div');
 	//container.className="player-wrapper"
-	aspect && container.style.position='relative';
+	aspect && (container.style.position='relative');
 	container.style.paddingTop=padding /* Player ratio: 100 / (1280 / 720) */
 	container.style.width='100%';
 	container.style.height='100%';
