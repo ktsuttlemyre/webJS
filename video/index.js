@@ -47,7 +47,7 @@ function createPlayer(stage,url,options){
 	}
 	
 
-	let container = document.createElement('div')
+	let container = document.createElement('div');
 	//container.className="player-wrapper"
 	aspect && container.style.position='relative';
 	container.style.paddingTop=padding /* Player ratio: 100 / (1280 / 720) */
