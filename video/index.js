@@ -17,11 +17,40 @@ function createPlayer(stage,url,options){
 			controls = wrapper.firstElementChild;
 		}
 	}
+	//TODO accept other inputs using this 
+	//https://stackoverflow.com/questions/1186414/whats-the-algorithm-to-calculate-aspect-ratio
+	/*
+	aspect ratio = padding-bottom/top
+		16:9 = 56.25%
+		4:3 = 75%
+		3:2 = 66.66%
+		8:5 = 62.5%
+	*/
+	let aspectRatios = {
+		'16:9':'56.25%',
+		'4:3':'75%',
+		'3:2':'66.66%',
+		'8:5':'62.5%',
+	}
+	
+	let padding="56.25%"
+	let aspect = options.aspectRatio;
+	if(options.aspectRatio){
+		let type = typeof options.aspectRatio
+		if(type=='string'){
+			if(aspect.split(':').length ==2){
+				padding = aspectRatios[options.aspectRatio]
+			}
+		}else if(type == 'object'){
+			padding = ((aspect.width||aspect[0])/(aspect.height||aspect[1])) * 100
+		}
+	}
+	
 
 	let container = document.createElement('div')
 	//container.className="player-wrapper"
-	container.style.position='relative';
-	container.style.paddingTop="56.25%" /* Player ratio: 100 / (1280 / 720) */
+	aspect && container.style.position='relative';
+	container.style.paddingTop=padding /* Player ratio: 100 / (1280 / 720) */
 	container.style.width='100%';
 	container.style.height='100%';
 	if(!controls){
@@ -260,7 +289,11 @@ function createPlayer(stage,url,options){
 	// },5000)
 
 	//container.childNodes[0].className="react-player"
-	container.childNodes[0].style="width:100%; height:100%; position:absolute; top:0; left:0"
+	let style = "width:100%; height:100%;"
+	if(aspect){
+		style +="position:absolute; top:0; left:0"
+	}
+	container.childNodes[0].style=style
 
 }
 
