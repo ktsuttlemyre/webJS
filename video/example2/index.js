@@ -18,7 +18,9 @@ web.video = function WebVideo(stage, url, options) {
 	}
 
 	let container = document.createElement('div')
-	container.className="player-wrapper"
+	//container.className="player-wrapper"
+	container.style.position='relative';
+	container.style.paddingTop="56.25%" /* Player ratio: 100 / (1280 / 720) */
 	container.style.width='100%';
 	container.style.height='100%';
 	if(!controls){
@@ -371,8 +373,8 @@ web.video = function WebVideo(stage, url, options) {
 // 	// 	},1000)  
 // 	// },5000)
 
-	container.childNodes[0].className="react-player"
-	container.childNodes[0].style="width: 100%; height: 100%;"
+	//container.childNodes[0].className="react-player"
+	container.childNodes[0].style="width:100%; height:100%; position:absolute; top:0; left:0"
 
 	this.render()
 }
